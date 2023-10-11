@@ -5,8 +5,14 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     [SerializeField] private float move_Speed;
+    [SerializeField] private float gravity_Modifier;
     [SerializeField] private bool is_Grounded;
+    private Rigidbody rb;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -18,7 +24,11 @@ public class Player_Movement : MonoBehaviour
     {
         if(is_Grounded == true)
         {
-            transform.Translate(Vector3.right * move_Speed);
+            transform.Translate(Vector3.up * move_Speed);
+            if (Input.GetButtonDown("Jump"))
+            {
+                Physics.gravity *= -1;
+            }
         }
     }
 }
