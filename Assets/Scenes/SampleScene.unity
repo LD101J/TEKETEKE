@@ -368,6 +368,9 @@ MonoBehaviour:
   move_Speed: 0.14
   gravity_Modifier: 0
   is_Grounded: 0
+  gravity_Switch: 0
+  jump: 0
+  gravity_Run: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
