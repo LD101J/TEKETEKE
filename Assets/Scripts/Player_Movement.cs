@@ -47,8 +47,8 @@ public class Player_Movement : MonoBehaviour
             if (is_Grounded == true && gravity_Run == true)
             {
                 gravity_Run = true;
-                if (Input.GetButtonDown("Jump"))
-                {
+                if (Input.touchCount > 0)
+                    {
                     Jump();
                     gravity_Switch = true;
                     is_Grounded = false;
